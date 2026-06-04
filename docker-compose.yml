@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  webserver:
+    build: .
+    container_name: mini-webserver
+    ports:
+      - "8080:80"
+
+    volumes:
+      - ./website:/usr/share/nginx/html
+      - ./logs:/var/log/nginx
+
+    restart: always
